@@ -3,7 +3,7 @@
 #
 #NPS Night Skies Program
 #
-#Last updated: 2017/12/11
+#Last updated: 2018/1/4
 #
 #This script plots the number of sunspots verse time. The input data was 
 #downloaded from http://www.sidc.be/silso/datafiles#total website. Must include 
@@ -30,6 +30,8 @@ w = n.where(Y>1980)
 plt.figure(0, figsize=(12,4.5))
 plt.clf()
 plt.plot(Y[w], S[w],'k.-')
+plt.xlim(1980,2020)
+plt.ylim(0,300)
 plt.xlabel('Years', fontsize=18)
 plt.ylabel('Number of Sunspots', fontsize=18)
 plt.minorticks_on()
@@ -41,5 +43,5 @@ plt.show(block=False)
 
 plt.savefig('sunspots.jpg', dpi=200)
 
-#plt.savefig(r'C:\Users\lhung\Documents\Peer Review\NRR_Chaco\Images' + 
-#            r'\fig15-sunspots.jpg', dpi=200)
+plt.savefig(r'C:\Users\lhung\Documents\Peer Review\NRR_Chaco\Images' + 
+            r'\fig09-sunspots.jpg', dpi=200)

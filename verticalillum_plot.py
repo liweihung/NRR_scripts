@@ -3,7 +3,7 @@
 #
 #NPS Night Skies Program
 #
-#Last updated: 2017/12/11
+#Last updated: 2018/1/3
 #
 #This script plots (1) the vertical illuminance from anthropogenic light as a 
 #function of azimuth angle and (2) the panoramic image showing only the 
@@ -49,7 +49,7 @@ A.loc[len(A)] = [360,A.vert[0]]
    
 #Read in the artificial panoramic image in the background (facing south)
 imgpath = 'C:/Users/lhung/Documents/Peer Review/NRR_Chaco/Images/'
-img_north = plt.imread(imgpath+'CHCU_testimage.jpg')[196:500,57:1203] 
+img_north = plt.imread(imgpath+'artificial_CHCU.jpg')[196:500,57:1203] 
 h = int(img_north.shape[1]/2)
 img_south = n.concatenate([img_north[:,h:-1,:],img_north[:,1:h,:]],axis=1)
 
@@ -60,17 +60,15 @@ plt.clf()
 ax = fig.add_subplot(111)
 
 #Plot the background
-ax.imshow(img_south, alpha=0.5, extent=[0,360,0,1.1*A['vert'].max()], aspect="auto")
+ax.imshow(img_south, alpha=0.5, extent=[0,360,0,1000*1.1*A['vert'].max()], aspect="auto")
 
 #Plot the vertical illuminance
-ax.plot(A['azimuth'], A['vert'],'y-',lw=3)
-ax.plot(A['azimuth'], A['vert'],'k--',lw=2)
-line1 = plt.Line2D([], [], linewidth=2.5, linestyle="-", color='yellow')
-line2 = plt.Line2D([], [], linewidth=2, linestyle="-", dashes=(4, 2), color='black')
+ax.plot(A['azimuth'], 1000*A['vert'],color='khaki',ls='-',lw=3)
+ax.plot(A['azimuth'], 1000*A['vert'],'k--',lw=2)
 
 #Plot settings
 ax.set_xlabel('Azimuth Angle (degree)', fontsize=16)
-ax.set_ylabel('Vertical Illuminance (mlx) \n from artificial sources   ', fontsize=16)
+ax.set_ylabel(r'Vertical Illuminance ($\mu$lx) '+'\n from artificial sources   ', fontsize=16)
 ax.minorticks_on()
 ax.set_xticks(n.arange(0,450,45))
 ax.set_xlim(0,360)
@@ -79,6 +77,6 @@ ax.yaxis.set_ticks_position('both')
 fig.tight_layout()
 plt.draw()
 plt.show(block=False)
-plt.savefig('verticalillum.jpg', dpi=150)
-#plt.savefig(imgpath+'fig20-verticalillum.jpg', dpi=150)
+#plt.savefig('verticalillum.jpg', dpi=150)
+#plt.savefig(imgpath+'fig07-verticalillum.jpg', dpi=150)
 
