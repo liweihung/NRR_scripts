@@ -63,7 +63,7 @@ D = {'CHCU011014':1,
 
 #cities to be labeled
 C = ['Albuquerque','Farmington','Rio Rancho','Gallup','Crownpoint','Santa Fe',
-     'Bloomfield','Grants','Durango']
+     'Bloomfield','Grants']
                   
 
 #----------- Read in common images and set the common parameters -----------#

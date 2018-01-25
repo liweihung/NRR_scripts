@@ -3,7 +3,7 @@
 #
 #NPS Night Skies Program
 #
-#Last updated: 2018/1/3
+#Last updated: 2018/1/24
 #
 #This script plots (1) the vertical illuminance from anthropogenic light as a 
 #function of azimuth angle and (2) the panoramic image showing only the 
@@ -60,11 +60,12 @@ plt.clf()
 ax = fig.add_subplot(111)
 
 #Plot the background
-ax.imshow(img_south, alpha=0.5, extent=[0,360,0,1000*1.1*A['vert'].max()], aspect="auto")
+ax.imshow(img_south, alpha=0.8, extent=[0,360,0,1000*1.1*A['vert'].max()], aspect="auto")
 
 #Plot the vertical illuminance
-ax.plot(A['azimuth'], 1000*A['vert'],color='khaki',ls='-',lw=3)
-ax.plot(A['azimuth'], 1000*A['vert'],'k--',lw=2)
+
+ax.plot(A['azimuth'], 1000*A['vert'],'k-',lw=2)
+ax.plot(A['azimuth'], 1000*A['vert'],color='khaki',ls='--',lw=2)
 
 #Plot settings
 ax.set_xlabel('Azimuth Angle (degree)', fontsize=16)
