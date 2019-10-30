@@ -32,7 +32,7 @@ plt.clf()
 plt.plot(Y[w], S[w],'k.-')
 plt.xlim(1980,2020)
 plt.ylim(0,300)
-plt.xlabel('Years', fontsize=18)
+plt.xlabel('Year', fontsize=18)
 plt.ylabel('Number of Sunspots', fontsize=18)
 plt.minorticks_on()
 plt.tick_params(axis='y',which='minor',left='off',right='off')
@@ -41,7 +41,7 @@ plt.tight_layout()
 plt.draw()
 plt.show(block=False)
 
-plt.savefig('sunspots.jpg', dpi=200)
+plt.savefig('sunspots.png', dpi=200)
 
 plt.savefig(r'C:\Users\lhung\Documents\Peer Review\NRR_Chaco\Images' + 
-            r'\fig09-sunspots.jpg', dpi=200)
+            r'\fig09-sunspots.png', dpi=200)

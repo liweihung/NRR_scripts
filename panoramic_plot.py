@@ -173,5 +173,5 @@ for k in D.keys():
     plt.draw()
     #plt.show(block=False)
     #plt.savefig('test.jpg', dpi=300)
-    plt.savefig(Pout+k+'_mosaic.jpg', dpi=150)
+    #plt.savefig(Pout+k+'_mosaic.jpg', dpi=150)
 
